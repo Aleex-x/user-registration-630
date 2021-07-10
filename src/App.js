@@ -1,4 +1,10 @@
 import React from 'react'
-import { Input } from './components/Input'
+import { Login } from './components/Login'
+import { GlobalStyle } from './GlobalStyles'
 
-export const App = () => <Input />
+export const App = () => (
+  <>
+    <GlobalStyle />
+    <Login />
+  </>
+)
