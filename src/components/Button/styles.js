@@ -1,15 +1,28 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Button = styled.button`
-  background: ${(props) => (props.primary ? '#397ef6' : '#ffffff')};
   border-radius: 10px;
-  border: ${(props) => (props.primary ? 'none' : '2px solid #ececf0')};
-  color: ${(props) => (props.primary ? '#FFFFFF' : '#747e91')};
   min-height: 64px;
   padding: 0;
   width: 100%;
   font-size: 18px;
   font-weight: 600;
+
+  ${(props) =>
+    props.primary
+      ? css`
+           {
+            background: #397ef6;
+            color: #ffffff;
+          }
+        `
+      : css`
+           {
+            color: #747e91;
+            background: #ffffff;
+            border: 2px solid #ececf0;
+          }
+        `}
 
   & svg {
     margin-right: 24px;

@@ -18,6 +18,7 @@ export const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     let data = {
       email: email.value,
       password: password.value
@@ -29,11 +30,17 @@ export const Form = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
-      .then((res) => res.json())
       .then((response) => {
-        console.log(response)
+        if (!response.ok) {
+          throw new Error('HTTP status ' + response.status)
+        }
+        return response.json()
+      })
+      .then((response) => {
+        window.localStorage.setItem('user', JSON.stringify(response))
       })
       .catch((e) => {
+        window.localStorage.setItem('user', '{}')
         console.log('jekjeje')
       })
   }
