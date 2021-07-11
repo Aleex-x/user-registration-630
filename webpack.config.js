@@ -5,6 +5,12 @@ module.exports = {
   output: {
     filename: 'app.bundle.js'
   },
+  devServer: {
+    historyApiFallback: {
+      disableDotRule: true
+    },
+    liveReload: true
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'

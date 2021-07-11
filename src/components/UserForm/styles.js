@@ -45,3 +45,8 @@ export const Minititle = styled.div`
   margin-top: 40px;
   font-weight: 600;
 `
+
+export const Error = styled.span`
+  font-size: 14px;
+  color: red;
+`
