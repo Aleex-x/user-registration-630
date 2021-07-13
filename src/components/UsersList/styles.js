@@ -5,12 +5,12 @@ import { device } from '../../utils/device'
 export const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
 `
 
 export const DivWrapper = styled.div`
   margin-bottom: 20px;
+  margin-right: 20px;
   width: 100%;
 
   @media ${device.laptop} {
