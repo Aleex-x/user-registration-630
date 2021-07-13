@@ -12,7 +12,7 @@ import {
   Error
 } from './styles'
 
-export const UserForm = ({ error, onSubmit, disabled, onKeyPress }) => {
+export const UserForm = ({ error, onSubmit, onKeyPress }) => {
   const url = 'https://www.notion.so/Front-End-dd893eba03c04e6ba0f75fd3e37a4ca8'
   const email = useInputValue('')
   const password = useInputValue('')
@@ -26,7 +26,7 @@ export const UserForm = ({ error, onSubmit, disabled, onKeyPress }) => {
   }
 
   return (
-    <Form disabled={disabled} onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Subtitle>START FOR FREE</Subtitle>
       <Title>Sign up!</Title>
       <SubtitleLogin>Already a member?, nice!</SubtitleLogin>
@@ -45,7 +45,7 @@ export const UserForm = ({ error, onSubmit, disabled, onKeyPress }) => {
       />
       {error && <Error>{error}</Error>}
       <Button label='Create an account' />
-      <Button label='Sign up with Google' primary={false} />
+      <Button disabled label='Sign up with Google' primary={false} />
       <Minititle>
         This site is protected by reCAPTCHA and the Google
         <br />

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { device } from '../../utils/device'
+
 export const Image = styled.img`
   border-radius: 50%;
   border: 1px solid #ddd;
@@ -17,6 +19,7 @@ export const Name = styled.div`
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 16px;
+  white-space: nowrap;
 `
 
 export const Email = styled.div`
@@ -30,8 +33,12 @@ export const Div = styled.div`
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
-
   display: flex;
   flex-direction: column;
-  padding: 64px 120px;
+  padding: 16px 24px;
+
+  @media ${device.laptop} {
+    padding: 64px 120px;
+    max-width: 400px;
+  }
 `

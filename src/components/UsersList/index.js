@@ -1,43 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { UserCard } from '../UserCard'
-import { Div, Image } from './styles'
+import { Div, DivWrapper, Button, ButtonWrapper, Error } from './styles'
 
-function useUsersData() {
-  const URL = 'https://reqres.in/api/users?page=2'
-  const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(function () {
-    setLoading(true)
-    window
-      .fetch(URL)
-      .then((res) => res.json())
-      .then((response) => {
-        setUsers(response.data)
-        setLoading(false)
-      })
-  }, [])
-
-  return { users, loading }
-}
-
-export const UsersList = () => {
-  const { users, loading } = useUsersData()
-
+export const UsersList = ({ onClick, users, message }) => {
   return (
     <>
-      {loading ? (
-        <UserCard />
-      ) : (
-        users.map((user) => (
-          <UserCard
-            key={user.id}
-            cover={user.avatar}
-            name={user.first_name + ' ' + user.last_name}
-            email={user.email}
-          ></UserCard>
-        ))
-      )}
+      <Div>
+        {users.map((user) => (
+          <DivWrapper key={user.id}>
+            <UserCard
+              cover={user.avatar}
+              name={user.first_name + ' ' + user.last_name}
+              email={user.email}
+            />
+          </DivWrapper>
+        ))}
+      </Div>
+      {message && <Error>{message}</Error>}
+      <ButtonWrapper>
+        <Button onClick={onClick}>Ver más</Button>
+      </ButtonWrapper>
     </>
   )
 }

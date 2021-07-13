@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { device } from '../../utils/device'
 
 export const Div = styled.div`
@@ -21,5 +21,16 @@ export const InnerDiv = styled.div`
     display: block;
     width: 50%;
     padding: 62px 100px;
+
+    ${(props) =>
+      props.left
+        ? css`
+             {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          `
+        : css``}
   }
 `
