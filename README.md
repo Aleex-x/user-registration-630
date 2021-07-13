@@ -1,28 +1,23 @@
-# Foobar
+# Project
 
-Foobar is a Python library for dealing with word pluralization.
+Front end project to logon and show users from https://reqres.in/.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the  [node](https://nodejs.org/en/download/) package manager to install node and after that npm.
+
+To install the project you need to run
 
 ```bash
-pip install foobar
+npm install
 ```
 
 ## Usage
 
-```python
-import foobar
+To run a localhost server you need to run
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+```bash
+npm run dev
 ```
 
 ## Contributing
