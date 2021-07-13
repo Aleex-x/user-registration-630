@@ -6,6 +6,7 @@ export const Div = styled.div`
   display: flex;
   border-radius: 10px;
   flex-direction: column;
+  box-shadow: 0 0px 10px 3px rgba(0, 0, 0, 0.08);
 
   @media ${device.laptop} {
     flex-direction: row;

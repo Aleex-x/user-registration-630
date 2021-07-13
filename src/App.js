@@ -8,7 +8,7 @@ import { Context } from './Context'
 
 export const App = () => {
   const { isAuth } = useContext(Context)
-  console.log(isAuth)
+
   return (
     <Suspense fallback={<div />}>
       <GlobalStyle />

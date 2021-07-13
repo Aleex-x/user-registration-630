@@ -8,12 +8,10 @@ export const Button = ({
   onClick,
   disabled
 }) => (
-  <div>
-    <ButtonStyled disabled={disabled} onClick={onClick} primary={primary}>
-      <Div>
-        {!primary && <FcGoogle />}
-        {label}
-      </Div>
-    </ButtonStyled>
-  </div>
+  <ButtonStyled disabled={disabled} onClick={onClick} primary={primary}>
+    <Div>
+      {!primary && <FcGoogle />}
+      {label}
+    </Div>
+  </ButtonStyled>
 )

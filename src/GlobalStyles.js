@@ -27,7 +27,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: #fcfbfc;
-    height: 100vh;
     margin: 0 auto;
     overscroll-behavior: none;
     max-width: 90%;
@@ -38,8 +37,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    overflow-x: hidden;
-    min-height: 100vh;
-    padding-bottom: 10px;
+    padding-top: 116px;
   }
 `

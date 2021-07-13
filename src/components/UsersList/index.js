@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { User } from '../User'
+import { UserCard } from '../UserCard'
 import { Div, Image } from './styles'
 
 function useUsersData() {
@@ -27,15 +27,15 @@ export const UsersList = () => {
   return (
     <>
       {loading ? (
-        <User />
+        <UserCard />
       ) : (
         users.map((user) => (
-          <User
+          <UserCard
             key={user.id}
             cover={user.avatar}
             name={user.first_name + ' ' + user.last_name}
             email={user.email}
-          ></User>
+          ></UserCard>
         ))
       )}
     </>
